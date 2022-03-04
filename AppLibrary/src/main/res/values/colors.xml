@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--公用控件popwind颜色-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#59a9eb</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="pop_bg_content">#F9F9F9</color>
+    <color name="pop_bg_translucent">#01000000</color>
+    <color name="pop_bg_translucent_half">#70000000</color>
+    <color name="pop_item_text_cancel_color">#a6000000</color>
+    <color name="pop_item_text_normal_color">#ff009e9d</color>
+    <color name="pop_item_text_warning_color">#fff03b2e</color>
+    <color name="pop_item_bg_pressed">#ffe5e5e5</color>
+    <color name="pop_action_sheet_title">#4d4d4d</color>
+    <color name="pop_action_sheet_message">#8f8f8f</color>
+    <color name="home_tab_un_select">#8E8E93</color>
+    <color name="home_tab_select">#007AFF</color>
+    <!--公用控件popwind颜色-->
+
+    <color name="color_ffffffff">#ffffffff</color>
+    <color name="color_a6ffffff">#a6ffffff</color>
+    <color name="color_59ffffff">#59ffffff</color>
+    <color name="color_1affffff">#1affffff</color>
+    <!--*****************************************************************-->
+    <color name="transparent">#00000000</color>
+    <color name="color_ff000000">#ff000000</color>
+    <color name="color_f2000000">#f2000000</color>
+    <color name="color_cc000000">#cc000000</color>
+    <color name="color_a6000000">#a6000000</color>
+    <color name="color_73000000">#73000000</color>
+    <color name="color_59000000">#59000000</color>
+    <color name="color_40000000">#40000000</color>
+    <color name="color_33000000">#33000000</color>
+    <color name="color_1a000000">#1a000000</color>
+    <color name="color_0d000000">#0d000000</color>
+    <color name="color_555555">#555555</color>
+    <!--*****************************************************************-->
+    <color name="color_01058888">#01058888</color>
+    <color name="color_02058888">#02058888</color>
+    <color name="color_03058888">#03058888</color>
+    <color name="color_04058888">#04058888</color>
+    <color name="color_05058888">#05058888</color>
+    <color name="color_06058888">#06058888</color>
+    <color name="color_ff058888">#ff058888</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <!--*****************************************************************-->
+
+    <!--Glide默认占位图颜色-->
+    <color name="glide_placeholder_color">#fff2f2f2</color>
+
+    <!--Loading控件相关-->
+    <color name="loading_circle_color">#fff2f2f2</color>
+    <color name="loading_text_color">#fff2f2f2</color>
+
+    <!--主题背景色-->
+    <color name="theme_background_color">#fff2f2f2</color>
+
+    <color name="mark_title">#2ACBE1</color>>
+    <color name="base_title">#FFBB00</color>>
+    <color name="button_normal">#142545</color>>
+    <color name="button_select">#4085E2</color>>
+    <color name="alph">#00000000</color>>
+    <color name="common_blue">#3F51B5</color>
+    <color name="control_base">#475872</color>
+
+
+    <declare-styleable name="ImageTextView">
+        <attr name="drawable" format="reference"/>
+        <attr name="drawableWidth" format="dimension"/>
+        <attr name="drawableHeight" format="dimension"/>
+        <attr name="position" format="integer"/>
+    </declare-styleable>
+
+    <color name="green_btn_color_normal">#2BCFB8</color>
+    <color name="green_btn_color_disable">#CCCCCC</color>
+    <color name="green_btn_color_pressed">#05bca2</color>
+
+</resources>

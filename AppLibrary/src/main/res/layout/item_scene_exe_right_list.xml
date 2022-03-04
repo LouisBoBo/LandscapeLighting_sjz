@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_110"
+    android:background="@drawable/scene_left_list_item_bg_shape"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/view_left"
+        android:layout_width="0dp"
+        android:background="@drawable/scene_left_list_item_select_bg_shape"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:src="@drawable/node_check"
+        app:layout_constraintBottom_toBottomOf="@id/view_left"
+        app:layout_constraintEnd_toEndOf="@id/view_left"
+        app:layout_constraintStart_toStartOf="@id/view_left"
+        app:layout_constraintTop_toTopOf="@id/view_left"
+
+        />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/barrier"
+        android:layout_width="3dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:id="@+id/view_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.exc.applibrary.main.customview.ImaginaryLineView
+        android:id="@+id/xuxian"
+        android:layout_width="@dimen/dp_2"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/view_right"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="@id/view_right" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_jiedian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/view_right"
+        app:layout_constraintEnd_toEndOf="@id/view_right"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@id/view_right"
+        app:layout_constraintTop_toTopOf="@id/view_right">
+
+        <TextView
+            android:id="@+id/tv_node_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="节点名称"
+            android:textColor="#D0D3D9"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_scene_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="场景名称"
+            android:textColor="#D0D3D9"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_part_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:text="分区名称"
+            android:textColor="#D0D3D9"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

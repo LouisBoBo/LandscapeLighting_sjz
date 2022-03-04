@@ -1,0 +1,126 @@
+
+apply plugin:'com.android.library'
+//Kotlin插件
+apply plugin: 'kotlin-android'
+//Kotlin Android  Extensions plugin 插件
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    viewBinding.enabled = true
+
+
+//    packagingOptions {
+//        exclude 'ResPackIndoorMap.rs'
+//        exclude '**.**'
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDir 'libs'
+            res.srcDirs = [
+                    'src/main/res'
+                    ,
+                    'src/main/res_bottom_bar_icon'
+//                    'src/main/res_gateway',
+//                    'src/main/res_home',
+//                    "src/main/res_weather",
+//                    "src/main/res_setting",
+//                    "src/main/res_device",
+//                    "src/main/res_scan",
+//                    "src/main/res_icon",
+//                    "src/main/res_member",
+//                    "src/main/res_scene",
+//                    "src/main/res_tuya",
+//                    "src/main/res_room",
+//                    "src/main/res_keeper",
+//                    "src/main/res_music",
+//                    "src/main/res_voice",
+//                    "src/main/res_linkage",
+//                    "src/main/res_ezviz",
+//                    "src/main/res_wsdk",
+//                    "src/main/res_menu_icon"
+            ]
+        }
+    }
+
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.5'
+    implementation 'com.google.android:flexbox:0.3.1'
+    implementation 'com.pengli:pswitch:0.0.1'
+    implementation 'com.github.xuexiangjys:XUI:1.1.6'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.github.donkingliang:ConsecutiveScroller:2.6.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation project(path: ':ZBLibrary')
+    implementation project(path: ':FuckTabLayouLlib')
+    implementation project(path: ':QRCodeLibrary')
+//    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/HikVideoPlayer.jar')
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.shuyu:GSYVideoPlayer:8.0.0'
+    //添加Kotlin标准库依赖
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //添加Anko库依赖，anko-common是我们需要Anko库的一小部分，以至于我们不会把没用到的部分加进来。
+    implementation "org.jetbrains.anko:anko-common:$anko_version"
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'cn.bingoogolapple:bga-baseadapter:2.0.0@aar'
+
+    implementation 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
+    implementation 'com.github.addappcn:android-pickers:2.0.0'
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+    implementation 'com.github.T-alifei:bottombar:+'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+//    implementation 'com.xm.permissions:XmPermissions:1.0.2'
+    implementation 'com.lxj:xpopup:+'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.blankj:utilcode:1.20.3'
+
+    implementation 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    //banner轮播框架
+    implementation 'com.youth.banner:banner:1.4.10'
+    // Glide 图片加载
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+}

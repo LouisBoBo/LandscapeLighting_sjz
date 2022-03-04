@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffffff"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/fenqu_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/activity_searchresult_headerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fenqu_result_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="0.5dp"
+        android:background="@drawable/background_build_unselector"
+        app:layout_constraintTop_toBottomOf="@id/fenqu_header"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <include
+        android:id="@+id/zhandian_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/fenqu_result_recycleview"
+        layout="@layout/activity_searchresult_headerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/zhandian_result_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="0.5dp"
+        android:background="@drawable/background_build_unselector"
+        app:layout_constraintTop_toBottomOf="@id/zhandian_header"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <include
+        android:id="@+id/build_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/zhandian_result_recycleview"
+        layout="@layout/activity_searchresult_headerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/build_result_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="0.5dp"
+        android:background="@drawable/background_build_unselector"
+        app:layout_constraintTop_toBottomOf="@id/build_header"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <include
+        android:id="@+id/node_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/build_result_recycleview"
+        layout="@layout/activity_searchresult_headerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/node_result_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:padding="0.5dp"
+        android:visibility="invisible"
+        android:background="@drawable/background_build_unselector"
+        app:layout_constraintTop_toBottomOf="@id/node_header"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

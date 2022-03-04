@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/partition_baseview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_50"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pop_item_bg_pressed">
+
+    <View
+        android:id="@+id/baseview_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_style"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/dp_40"
+        android:text=" 分区信息"
+        android:singleLine="true"
+        android:drawableLeft="@mipmap/siteinfo"
+        app:layout_constraintTop_toTopOf="@id/baseview_content"
+        app:layout_constraintStart_toStartOf="@id/baseview_content"
+        app:layout_constraintStart_toEndOf="@id/tv_partitionnametext"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"
+        />
+
+    <TextView
+        android:id="@+id/tv_partitionnametext"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginRight="@dimen/dp_10"
+        android:gravity="right|center_vertical"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/baseview_content"
+        app:layout_constraintStart_toEndOf="@id/tv_style"
+        app:layout_constraintEnd_toEndOf="@id/baseview_content"/>
+
+    <TextView
+        android:id="@+id/tv_style_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/pop_item_bg_pressed"
+        app:layout_constraintTop_toBottomOf="@id/tv_style"
+        app:layout_constraintStart_toStartOf="@id/baseview_content"/>
+
+
+    <TextView
+        android:id="@+id/tv_build"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        app:layout_constraintTop_toBottomOf="@id/tv_style_line"
+        app:layout_constraintStart_toStartOf="@id/tv_style_line"
+        app:layout_constraintEnd_toStartOf="@id/tv_online"
+        android:paddingLeft="@dimen/dp_10"
+        android:text=" 建筑数量"
+        android:drawableLeft="@mipmap/njianicon"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_online"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        app:layout_constraintTop_toBottomOf="@id/tv_style_line"
+        app:layout_constraintStart_toEndOf="@id/tv_build"
+        app:layout_constraintEnd_toStartOf="@id/tv_offline"
+        android:paddingLeft="@dimen/dp_10"
+        android:text=" 在线数量"
+        android:drawableLeft="@mipmap/onlineinfo"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_offline"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        app:layout_constraintTop_toBottomOf="@id/tv_style_line"
+        app:layout_constraintStart_toEndOf="@id/tv_online"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="@dimen/dp_10"
+        android:text=" 离线数量"
+        android:drawableLeft="@mipmap/offlineinfo"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_partition_buildnum"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_build"
+        app:layout_constraintStart_toStartOf="@id/tv_style_line"
+        app:layout_constraintEnd_toStartOf="@id/tv_online"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="0"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_partition_onlinenum"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_build"
+        app:layout_constraintStart_toEndOf="@id/tv_build"
+        app:layout_constraintEnd_toStartOf="@id/tv_offline"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="0"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_partition_offlinenum"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@id/tv_build"
+        app:layout_constraintStart_toEndOf="@id/tv_online"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="@dimen/dp_10"
+        android:text="0"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toEndOf="@id/tv_build"
+        app:layout_constraintTop_toTopOf="@id/tv_build"
+        android:background="@color/pop_item_bg_pressed"/>
+
+    <TextView
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toEndOf="@id/tv_online"
+        app:layout_constraintTop_toTopOf="@id/tv_build"
+        android:background="@color/pop_item_bg_pressed"/>
+
+
+    <View
+        android:id="@+id/baseview_switch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseview_content" />
+
+    <TextView
+        android:id="@+id/tv_powerswitch"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_40"
+        android:text=" 电源开关"
+        android:drawableLeft="@mipmap/on_off"
+        app:layout_constraintTop_toTopOf="@id/baseview_switch"
+        app:layout_constraintStart_toStartOf="@id/baseview_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+    <TextView
+        android:id="@+id/btn_partition_close"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/dp_30"
+        android:background="@mipmap/close_namal"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/baseview_switch"
+        app:layout_constraintEnd_toEndOf="@id/baseview_switch"
+        app:layout_constraintBottom_toBottomOf="@id/baseview_switch"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_20"/>
+
+    <TextView
+        android:id="@+id/btn_partition_open"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/dp_30"
+        android:background="@mipmap/open_namal"
+        android:layout_marginRight="@dimen/dp_80"
+        app:layout_constraintTop_toTopOf="@id/baseview_switch"
+        app:layout_constraintEnd_toEndOf="@id/baseview_switch"
+        app:layout_constraintBottom_toBottomOf="@id/baseview_switch"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_20"/>
+
+    <View
+        android:id="@+id/baseview_stop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseview_switch" />
+
+    <TextView
+        android:id="@+id/tv_videostop"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_40"
+        android:text=" 节目停止"
+        android:drawableLeft="@mipmap/proquit"
+        app:layout_constraintTop_toTopOf="@id/baseview_stop"
+        app:layout_constraintStart_toStartOf="@id/baseview_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+    <TextView
+        android:id="@+id/btn_partition_videostop"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@mipmap/stop_namal"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/baseview_stop"
+        app:layout_constraintEnd_toEndOf="@id/baseview_stop"
+        app:layout_constraintBottom_toBottomOf="@id/baseview_stop"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_20"/>
+
+
+    <View
+        android:id="@+id/baseview_change"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseview_stop" />
+
+    <TextView
+        android:id="@+id/tv_videochange"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_40"
+        android:text=" 策略下发"
+        android:drawableLeft="@mipmap/issue"
+        app:layout_constraintTop_toTopOf="@id/baseview_change"
+        app:layout_constraintStart_toStartOf="@id/baseview_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+    <TextView
+        android:id="@+id/btn_partition_videochange"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_30"
+        android:background="@mipmap/xiafa_namal"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toTopOf="@id/baseview_change"
+        app:layout_constraintEnd_toEndOf="@id/baseview_change"
+        app:layout_constraintBottom_toBottomOf="@id/baseview_change"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_20"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

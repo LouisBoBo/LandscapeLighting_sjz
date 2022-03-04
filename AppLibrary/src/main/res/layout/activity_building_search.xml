@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pop_item_bg_pressed"
+    >
+
+    <TextView
+        android:id="@+id/head_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/back"
+        app:layout_constraintStart_toStartOf="@id/head_view"
+        app:layout_constraintTop_toTopOf="@id/head_view" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_10"
+        android:lines="1"
+        android:textColor="@color/pop_action_sheet_message"
+        android:textSize="@dimen/dp_14"
+        android:hint="请输入分区站点建筑"
+        android:background="@drawable/search_cycle_text"
+        app:layout_constraintTop_toTopOf="@id/head_view"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintEnd_toStartOf="@id/iv_search"
+        />
+
+    <TextView
+        android:id="@+id/iv_search"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scaleType="fitCenter"
+        android:text="搜索"
+        android:gravity="center"
+        android:textColor="@color/pop_action_sheet_message"
+        app:layout_constraintTop_toTopOf="@id/head_view"
+        app:layout_constraintEnd_toEndOf="@id/head_view"
+        app:layout_constraintStart_toEndOf="@id/et_search"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@color/color_ffffffff"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textSize="@dimen/dp_12"
+        android:textColor="@color/pop_action_sheet_message"
+        app:layout_constraintTop_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_confirm"/>
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="45dp"
+        android:text="确定"
+        android:gravity="center"
+        android:textColor="@color/pop_action_sheet_message"
+        app:layout_constraintTop_toBottomOf="@id/iv_search"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fenqu_recycleview"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="0dp"
+        android:background="@color/pop_item_bg_pressed"
+        app:layout_constraintTop_toBottomOf="@id/head_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/build_recycleview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_ffffffff"
+        app:layout_constraintTop_toBottomOf="@id/head_view"
+        app:layout_constraintStart_toEndOf="@id/fenqu_recycleview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/searchresult_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:background="@color/color_ff000000"
+        app:layout_constraintTop_toBottomOf="@id/head_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

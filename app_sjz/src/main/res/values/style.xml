@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <style name="Anim_fade" parent="android:Theme.NoTitleBar">-->
+<!--        <item name="android:windowAnimationStyle">@style/fade</item>-->
+<!--    </style>-->
+
+<!--    <style name="fade" parent="@android:style/Animation.Activity">-->
+<!--        <item name="android:activityOpenEnterAnimation">@anim/right_push_in</item>-->
+<!--        <item name="android:activityOpenExitAnimation">@anim/hold</item>-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/right_push_in</item>-->
+<!--        <item name="android:activityCloseExitAnimation">@anim/hold</item>-->
+
+<!--    </style>-->
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/logo_splash</item>
+
+
+    </style>
+</resources>

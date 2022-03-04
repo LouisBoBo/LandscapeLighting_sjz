@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/header_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffffff">
+
+        <ImageView
+            android:id="@+id/header_left_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/header_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="选择站点"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="" />
+
+
+        <TextView
+            android:id="@+id/header_right_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_17"
+            android:background="@drawable/background_btn_common_bg"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_search_blue"
+            android:text="确认"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="#EDEDED" />
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.xuexiang.xui.widget.tabbar.VerticalTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="match_parent"
+            android:background="#EDEDED"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:vtl_indicator_color="@color/xui_config_color_white"
+            app:vtl_indicator_gravity="fill"
+            app:vtl_tab_height="45dp"
+            app:vtl_tab_mode="scrollable" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tab_layout"
+            app:layout_constraintTop_toTopOf="@id/tab_layout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

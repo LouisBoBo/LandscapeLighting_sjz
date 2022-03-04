@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.exc.applibrary.main.customview.YFHeaderView
+        android:id="@+id/head_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:show_views="left_img|center_text"
+        app:title_text="分区列表"/>
+
+    <TextView
+        android:id="@+id/confirm_button"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_25"
+        android:background="@drawable/login_btn_login"
+        android:text="确认"
+        android:textColor="@color/color_ffffffff"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_10"
+        android:lines="1"
+        android:textColor="@color/pop_action_sheet_message"
+        android:textSize="@dimen/dp_14"
+        android:hint="请输入分区名称"
+        android:background="@drawable/search_cycle_text"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@id/head_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/build_Recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        style="@style/MatchMatch"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toBottomOf="@id/et_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_sticky_tip"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_tip"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.exc.applibrary.main.customview.IndexView
+        android:id="@+id/iv_sticky_index"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/build_Recycleview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_100"
+        android:layout_marginBottom="@dimen/dp_50"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

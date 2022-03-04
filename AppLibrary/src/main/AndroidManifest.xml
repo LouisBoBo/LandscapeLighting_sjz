@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.exc.applibrary">
+
+    <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application>
+        <activity android:name=".main.MainActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".main.ui.activity.MyInfoActivity"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity
+            android:name=".main.ui.activity.PwdChangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.SearchBuildingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.MoreBuilddingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.MyWorkOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.DataCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.WorkOrderDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.PartitionListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize|adjustUnspecified|stateUnspecified|adjustPan"></activity>
+
+        <activity
+            android:name=".main.ui.activity.OrderEditActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.BrowsePicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.OrderCreateNewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.SceneSwitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.ui.activity.SceneExeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.LoopControlActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.LoopControlNewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.SceneExeRightActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.message.MessageDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.message.MyMessageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.show.SwitchShowActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.monitoring.MonitoringListActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.ProjectionControlActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.SearchLoopActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.NewDataCenterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".main.ui.activity.SelectSiteActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".main.ui.activity.ProjectionInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize|adjustUnspecified|stateUnspecified|adjustPan"/>
+
+    </application>
+
+
+</manifest>

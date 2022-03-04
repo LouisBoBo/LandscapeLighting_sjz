@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/unsite_baseview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_ffffffff">
+
+    <View
+        android:id="@+id/base_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:background="@color/pop_item_bg_pressed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"/>
+
+    <ImageView
+        android:id="@+id/image_search"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        app:layout_constraintTop_toTopOf="@id/base_search"
+        app:layout_constraintStart_toStartOf="@id/base_search"
+        app:layout_constraintBottom_toBottomOf="@id/base_search"
+        android:background="@color/black"
+        android:layout_marginLeft="@dimen/dp_10"/>
+
+    <TextView
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_30"
+        android:hint="搜索分区、站点、建筑"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_5"
+        app:layout_constraintTop_toTopOf="@id/base_search"
+        app:layout_constraintStart_toEndOf="@id/image_search"
+        app:layout_constraintEnd_toEndOf="@id/base_search"
+        android:background="@color/alph"/>
+
+    <ImageView
+        android:id="@+id/image_tip"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_100"
+        app:layout_constraintTop_toBottomOf="@id/base_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="无选中信息"
+        app:layout_constraintTop_toBottomOf="@id/image_tip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_10"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        app:layout_constraintTop_toBottomOf="@id/text_tip"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

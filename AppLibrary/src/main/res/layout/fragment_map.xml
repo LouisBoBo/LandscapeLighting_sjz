@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.exc.applibrary.main.customview.BottomDrawerLayout
+        android:id="@+id/bottom_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/alph"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_price_detail"
+            android:layout_width="match_parent"
+            android:layout_height="335dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:id="@+id/layout_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_15"
+            android:background="@color/alph"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </com.exc.applibrary.main.customview.BottomDrawerLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

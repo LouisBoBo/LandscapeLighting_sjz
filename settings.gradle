@@ -1,0 +1,6 @@
+include ':app_sjz'
+include ':ZBLibrary'
+include ':QRCodeLibrary'
+include ':AppLibrary'
+include ':FuckTabLayouLlib'
+rootProject.name = "LandscapeLighting_sjz"

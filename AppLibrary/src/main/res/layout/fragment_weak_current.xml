@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass">
+
+        <ImageView
+            android:id="@+id/statistics_base"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/mPieChart"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="@id/statistics_base"
+            app:layout_constraintTop_toTopOf="@id/statistics_base"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            />
+
+        <View
+            android:id="@+id/build_baseview"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="0dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            app:layout_constraintStart_toEndOf="@id/mPieChart"
+            app:layout_constraintTop_toTopOf="@id/statistics_base" />
+
+        <ImageView
+            android:id="@+id/build_total"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toTopOf="@id/build_baseview" />
+
+        <ImageView
+            android:id="@+id/build_online"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/wifi_online"
+            app:layout_constraintBottom_toTopOf="@id/build_offline"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toBottomOf="@id/build_total" />
+
+        <ImageView
+            android:id="@+id/build_offline"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/wifi_offline"
+            app:layout_constraintBottom_toBottomOf="@id/build_baseview"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toBottomOf="@id/build_online" />
+
+        <View
+            android:id="@+id/build_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            app:layout_constraintEnd_toEndOf="@id/statistics_base"
+            app:layout_constraintStart_toEndOf="@id/build_baseview"
+            app:layout_constraintTop_toTopOf="@id/statistics_base" />
+
+        <View
+            android:id="@+id/detail_total"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_online"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toTopOf="@id/build_detail" />
+
+        <View
+            android:id="@+id/detail_online"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_offline"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toBottomOf="@id/detail_total" />
+
+        <View
+            android:id="@+id/detail_offline"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/build_detail"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toBottomOf="@id/detail_online" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="弱电节点"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/detail_total"
+            app:layout_constraintTop_toTopOf="@id/detail_total"
+            app:layout_constraintEnd_toEndOf="@id/detail_total"/>
+
+        <TextView
+            android:id="@+id/tv_online"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:text="在线数量"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/detail_online"
+            app:layout_constraintTop_toTopOf="@id/detail_online"
+            app:layout_constraintEnd_toEndOf="@id/detail_online"
+            app:layout_constraintBottom_toBottomOf="@id/detail_online"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_online"
+            app:layout_constraintEnd_toEndOf="@id/detail_online"
+            app:layout_constraintStart_toStartOf="@id/detail_online" />
+
+        <TextView
+            android:id="@+id/tv_offline"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:text="离线数量"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/detail_offline"
+            app:layout_constraintTop_toTopOf="@id/detail_offline"
+            app:layout_constraintEnd_toEndOf="@id/detail_offline"
+            app:layout_constraintBottom_toBottomOf="@id/detail_offline"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_offline"
+            app:layout_constraintEnd_toEndOf="@id/detail_offline"
+            app:layout_constraintStart_toStartOf="@id/detail_offline" />
+
+
+        <TextView
+            android:id="@+id/energy_data"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="周亮灯率"
+            app:layout_constraintTop_toBottomOf="@id/statistics_base"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/broken_line"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_build_unselector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/energy_data" />
+
+        <TextView
+            android:id="@+id/mark_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="年月"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/broken_line"
+            app:layout_constraintStart_toStartOf="@id/broken_line" />
+
+        <TextView
+            android:id="@+id/year_style_text"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/background_solid_gray_shape"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/color_40000000"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/mark_title"
+            app:layout_constraintBottom_toBottomOf="@id/mark_title"/>
+
+        <Spinner
+            android:id="@+id/yrar_spinner"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="11dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/year_style_text"
+            app:layout_constraintEnd_toEndOf="@id/year_style_text"
+            app:layout_constraintBottom_toBottomOf="@id/year_style_text"/>
+
+        <TextView
+            android:id="@+id/month_style_text"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/background_solid_gray_shape"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/color_40000000"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/year_style_text"
+            app:layout_constraintBottom_toBottomOf="@id/mark_title"/>
+
+        <Spinner
+            android:id="@+id/month_spinner"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="11dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/month_style_text"
+            app:layout_constraintEnd_toEndOf="@id/month_style_text"
+            app:layout_constraintBottom_toBottomOf="@id/month_style_text"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/mbarChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@id/broken_line"
+            app:layout_constraintStart_toEndOf="@id/broken_line"
+            app:layout_constraintTop_toBottomOf="@id/mark_title"
+            app:layout_constraintBottom_toBottomOf="@id/broken_line"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="10dp"
+            android:text="更多历史数据，请前往平台查看！"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/broken_line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

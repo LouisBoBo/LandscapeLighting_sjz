@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass">
+
+        <com.exc.applibrary.main.customview.YFHeaderView
+            android:id="@+id/head_view"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:show_views="left_img|center_text|right_img"
+            app:title_text="数据中心" />
+
+        <TextView
+            android:id="@+id/partition_titile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="武昌区"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/head_view" />
+
+        <TextView
+            android:id="@+id/statistics_titile"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="10dp"
+            android:text="今日建筑统计"
+            android:textColor="@color/build_blue_pressed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partition_titile" />
+
+        <TextView
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="实时数据"
+            android:textColor="@color/blue_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/partition_titile" />
+
+        <ImageView
+            android:id="@+id/statistics_base"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/map_newbasetop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statistics_titile" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/mPieChart"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="@id/statistics_base"
+            app:layout_constraintTop_toTopOf="@id/statistics_base"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/pie_center"
+            app:layout_constraintTop_toTopOf="@id/mPieChart"
+            app:layout_constraintBottom_toBottomOf="@id/mPieChart"
+            app:layout_constraintStart_toStartOf="@id/mPieChart"
+            app:layout_constraintEnd_toEndOf="@id/mPieChart"/>
+
+        <View
+            android:id="@+id/build_baseview"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            app:layout_constraintStart_toEndOf="@id/mPieChart"
+            app:layout_constraintTop_toTopOf="@id/statistics_base" />
+
+        <ImageView
+            android:id="@+id/build_total"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/build_total_num"
+            app:layout_constraintBottom_toTopOf="@id/build_online"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toTopOf="@id/build_baseview" />
+
+        <ImageView
+            android:id="@+id/build_online"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/build_online_num"
+            app:layout_constraintBottom_toTopOf="@id/build_offline"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toBottomOf="@id/build_total" />
+
+        <ImageView
+            android:id="@+id/build_offline"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/build_offline_num"
+            app:layout_constraintBottom_toBottomOf="@id/build_baseview"
+            app:layout_constraintEnd_toEndOf="@id/build_baseview"
+            app:layout_constraintStart_toStartOf="@id/build_baseview"
+            app:layout_constraintTop_toBottomOf="@id/build_online" />
+
+        <View
+            android:id="@+id/build_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/statistics_base"
+            app:layout_constraintEnd_toEndOf="@id/statistics_base"
+            app:layout_constraintStart_toEndOf="@id/build_baseview"
+            app:layout_constraintTop_toTopOf="@id/statistics_base" />
+
+        <View
+            android:id="@+id/detail_total"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_online"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toTopOf="@id/build_detail" />
+
+        <View
+            android:id="@+id/detail_online"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_offline"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toBottomOf="@id/detail_total" />
+
+        <View
+            android:id="@+id/detail_offline"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/build_detail"
+            app:layout_constraintEnd_toEndOf="@id/build_detail"
+            app:layout_constraintStart_toStartOf="@id/build_detail"
+            app:layout_constraintTop_toBottomOf="@id/detail_online" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:text="建筑总数"
+            android:textSize="14sp"
+            android:textColor="@color/build_blue_pressed"
+            app:layout_constraintStart_toStartOf="@id/detail_total"
+            app:layout_constraintTop_toTopOf="@id/detail_total" />
+
+        <TextView
+            android:id="@+id/total_num"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_total"
+            app:layout_constraintStart_toStartOf="@id/detail_total" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_total"
+            app:layout_constraintEnd_toEndOf="@id/detail_total"
+            app:layout_constraintStart_toStartOf="@id/detail_total" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:text="在线建筑"
+            android:textSize="14sp"
+            android:textColor="@color/green"
+            app:layout_constraintStart_toStartOf="@id/detail_online"
+            app:layout_constraintTop_toTopOf="@id/detail_online" />
+
+        <TextView
+            android:id="@+id/online_num"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/green"
+            app:layout_constraintBottom_toBottomOf="@id/detail_online"
+            app:layout_constraintStart_toStartOf="@id/detail_online" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_online"
+            app:layout_constraintEnd_toEndOf="@id/detail_online"
+            app:layout_constraintStart_toStartOf="@id/detail_online" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:text="离线/故障建筑"
+            android:textSize="14sp"
+            android:textColor="@color/orangered"
+            app:layout_constraintStart_toStartOf="@id/detail_offline"
+            app:layout_constraintTop_toTopOf="@id/detail_offline" />
+
+        <TextView
+            android:id="@+id/offline_num"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/orangered"
+            app:layout_constraintBottom_toBottomOf="@id/detail_offline"
+            app:layout_constraintStart_toStartOf="@id/detail_offline" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/build_blue_pressed"
+            app:layout_constraintBottom_toBottomOf="@id/detail_offline"
+            app:layout_constraintEnd_toEndOf="@id/detail_offline"
+            app:layout_constraintStart_toStartOf="@id/detail_offline" />
+
+        <ImageView
+            android:id="@+id/energy_base"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/map_basebottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statistics_base" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="总能耗 KW.h"
+            android:textColor="@color/build_blue_pressed"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/energy_base"
+            app:layout_constraintStart_toStartOf="@id/energy_base"
+            app:layout_constraintEnd_toEndOf="@id/energy_base"/>
+
+        <TextView
+            android:id="@+id/num1"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toStartOf="@id/energy_base"
+            app:layout_constraintEnd_toStartOf="@id/num2"
+            />
+
+        <TextView
+            android:id="@+id/num2"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num1"
+            app:layout_constraintEnd_toStartOf="@id/num3"
+            />
+
+        <TextView
+            android:id="@+id/num3"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num2"
+            app:layout_constraintEnd_toStartOf="@id/num4"
+            />
+
+        <TextView
+            android:id="@+id/num4"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num3"
+            app:layout_constraintEnd_toStartOf="@id/num5"
+            />
+
+        <TextView
+            android:id="@+id/num5"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num4"
+            app:layout_constraintEnd_toStartOf="@id/num6"
+            />
+
+        <TextView
+            android:id="@+id/num6"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num5"
+            app:layout_constraintEnd_toStartOf="@id/num7"
+            />
+
+        <TextView
+            android:id="@+id/num7"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num6"
+            app:layout_constraintEnd_toStartOf="@id/num8"
+            />
+
+        <TextView
+            android:id="@+id/num8"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/color_ffffffff"
+            android:background="@mipmap/num_base"
+            app:layout_constraintBottom_toBottomOf="@id/energy_base"
+            app:layout_constraintStart_toEndOf="@id/num7"
+            app:layout_constraintEnd_toEndOf="@id/energy_base"
+            />
+
+        <TextView
+            android:id="@+id/time_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="请选择周期："
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/energy_base" />
+
+        <TextView
+            android:id="@+id/time_style_text"
+            android:layout_width="120dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/background_solid_gray_shape"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/color_40000000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/time_title"
+            app:layout_constraintTop_toBottomOf="@id/energy_base" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="11dp"
+            app:layout_constraintStart_toEndOf="@id/time_title"
+            app:layout_constraintTop_toBottomOf="@id/energy_base" />
+
+
+        <TextView
+            android:id="@+id/buing_line"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_solid_gray_shape"
+            android:gravity="center"
+            android:text="建筑在线"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/time_title" />
+
+        <TextView
+            android:id="@+id/energy_data"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_solid_gray_shape"
+            android:gravity="center"
+            android:text="能耗数据"
+            app:layout_constraintStart_toEndOf="@id/buing_line"
+            app:layout_constraintTop_toBottomOf="@id/time_title" />
+
+        <TextView
+            android:id="@+id/realtime_data"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="历史数据"
+            android:textColor="@color/blue_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/energy_data" />
+
+        <ImageView
+            android:id="@+id/broken_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_build_unselector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/realtime_data" />
+
+        <TextView
+            android:id="@+id/mark_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="历史在线率"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="@id/broken_line"
+            app:layout_constraintStart_toStartOf="@id/broken_line"
+            app:layout_constraintEnd_toEndOf="@id/broken_line"
+            app:layout_constraintEnd_toStartOf="@id/mPieChart"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/mLineChar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toEndOf="@id/broken_line"
+            app:layout_constraintStart_toEndOf="@id/broken_line"
+            app:layout_constraintTop_toBottomOf="@id/mark_title"
+            app:layout_constraintBottom_toBottomOf="@id/broken_line"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="10dp"
+            android:text="更多历史数据，请前往平台查看！"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/broken_line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

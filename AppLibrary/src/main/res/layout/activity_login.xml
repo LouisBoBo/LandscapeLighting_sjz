@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="洪山区景观照明监控平台控制中心"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginBottom="@dimen/dp_40"
+        app:layout_constraintBottom_toTopOf="@id/center_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/center_bg"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_center_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="@id/center_bg"
+        app:layout_constraintStart_toStartOf="@id/center_bg"
+        app:layout_constraintTop_toTopOf="@id/center_bg" />
+
+    <View
+        android:id="@+id/view_username"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/login_deittext_border"
+        app:layout_constraintEnd_toEndOf="@id/center_bg"
+        app:layout_constraintStart_toStartOf="@id/center_bg"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+    <ImageView
+        android:id="@+id/iv_user_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:adjustViewBounds="true"
+        android:src="@drawable/login_user_name_icon"
+        app:layout_constraintBottom_toBottomOf="@id/view_username"
+        app:layout_constraintStart_toStartOf="@id/view_username"
+        app:layout_constraintTop_toTopOf="@id/view_username" />
+
+    <View
+        android:id="@+id/view_shuxian_username"
+        android:layout_width="2dp"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@color/color_33000000"
+        app:layout_constraintBottom_toBottomOf="@id/view_username"
+        app:layout_constraintStart_toEndOf="@id/iv_user_icon"
+        app:layout_constraintTop_toTopOf="@id/view_username" />
+
+
+    <EditText
+        android:id="@+id/usernameEdit"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:background="@null"
+        android:hint="请输入账号"
+        android:singleLine="true"
+        android:textColor="@color/cardview_dark_background"
+        android:textColorHint="@color/color_33000000"
+        app:layout_constraintBottom_toBottomOf="@id/view_username"
+        app:layout_constraintEnd_toEndOf="@id/view_username"
+        app:layout_constraintStart_toEndOf="@id/view_shuxian_username"
+        app:layout_constraintTop_toTopOf="@id/view_username" />
+
+    <View
+        android:id="@+id/view_pwd"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/login_deittext_border"
+        app:layout_constraintEnd_toEndOf="@id/center_bg"
+        app:layout_constraintStart_toStartOf="@id/center_bg"
+        app:layout_constraintTop_toBottomOf="@id/view_username" />
+
+
+    <ImageView
+        android:id="@+id/iv_pwd_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:adjustViewBounds="true"
+        android:src="@drawable/login_user_pwd_icon"
+        app:layout_constraintBottom_toBottomOf="@id/view_pwd"
+        app:layout_constraintStart_toStartOf="@id/view_pwd"
+        app:layout_constraintTop_toTopOf="@id/view_pwd" />
+
+    <View
+        android:id="@+id/view_shuxian_pwd"
+        android:layout_width="2dp"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@color/color_33000000"
+        app:layout_constraintBottom_toBottomOf="@id/view_pwd"
+        app:layout_constraintStart_toEndOf="@id/iv_pwd_icon"
+        app:layout_constraintTop_toTopOf="@id/view_pwd" />
+
+
+    <EditText
+        android:id="@+id/passwrordEdit"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:background="@null"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:textColor="@color/cardview_dark_background"
+        android:textColorHint="@color/color_33000000"
+        app:layout_constraintBottom_toBottomOf="@id/view_pwd"
+        app:layout_constraintEnd_toEndOf="@id/view_pwd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/view_shuxian_pwd"
+        app:layout_constraintTop_toTopOf="@id/view_pwd" />
+
+
+    <View
+        android:id="@+id/codedview"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/login_deittext_border"
+        app:layout_constraintEnd_toEndOf="@id/center_bg"
+        app:layout_constraintStart_toStartOf="@id/center_bg"
+        app:layout_constraintTop_toBottomOf="@id/view_pwd" />
+
+    <TextView
+        android:id="@+id/codetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="center"
+        android:text="验证码:"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@id/codedview"
+        app:layout_constraintStart_toStartOf="@id/codedview"
+        app:layout_constraintTop_toTopOf="@id/codedview" />
+
+    <EditText
+        android:id="@+id/codeEdit"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:background="@null"
+        android:hint="请输入验证码"
+        android:maxLength="4"
+        android:singleLine="true"
+        android:textColor="@color/cardview_dark_background"
+        android:textColorHint="@color/color_33000000"
+        android:textSize="@dimen/dp_15"
+        app:layout_constraintBottom_toBottomOf="@id/codedview"
+        app:layout_constraintEnd_toStartOf="@id/codeimage"
+        app:layout_constraintStart_toEndOf="@id/codetitle"
+        app:layout_constraintTop_toTopOf="@id/codedview" />
+
+
+    <com.exc.applibrary.main.customview.VerifyCode
+        android:id="@+id/codeimage"
+        android:layout_width="70dp"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/login_deittext_border"
+        app:codeBackground="@color/cardview_dark_background"
+        app:codeLength="4"
+        app:codeTextSize="21sp"
+        app:isContainChar="false"
+        app:layout_constraintBottom_toBottomOf="@id/codedview"
+        app:layout_constraintEnd_toEndOf="@id/codedview"
+        app:layout_constraintTop_toTopOf="@id/codedview"
+        app:linNum="4"
+        app:pointNum="4" />
+
+
+    <TextView
+        android:id="@+id/loginbutton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/login_btn_login"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/color_ffffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/center_bg"
+        app:layout_constraintStart_toStartOf="@id/center_bg"
+        app:layout_constraintTop_toBottomOf="@id/codedview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

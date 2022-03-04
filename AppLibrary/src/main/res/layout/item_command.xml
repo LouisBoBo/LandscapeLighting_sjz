@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginRight="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="30dp">
+
+    <TextView
+        android:id="@+id/btn_name"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="播放"
+        android:gravity="center"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/btn_gray_pressed"
+        android:background="@drawable/background_control_base"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--<domain-config cleartextTrafficPermitted="true">-->
+        <!---->
+        <!--&lt;!&ndash;<trust-anchors>&ndash;&gt;-->
+            <!--&lt;!&ndash;<certificates src="system" overridePins="true"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<certificates src="user" overridePins="true"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</trust-anchors>&ndash;&gt;-->
+        <!--<trust-anchors>-->
+            <!--<certificates src="system" />-->
+        <!--</trust-anchors>-->
+        <!--<domain includeSubdomains="true">www.pgyer.com</domain>-->
+        <!--<domain includeSubdomains="true">app-global.pgyer.com</domain>-->
+        <!--<domain includeSubdomains="true">sdkapi.kookong.com</domain>-->
+        <!--<domain includeSubdomains="true">data.hicloud.com</domain>-->
+        <!--<domain includeSubdomains="true">api.xichayuanpuer.com</domain>-->
+        <!--<domain includeSubdomains="true">lbs.netease.im</domain>-->
+    <!--</domain-config>-->
+
+<!--    <base-config cleartextTrafficPermitted="true">-->
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--            <certificates src="user" />-->
+<!--        </trust-anchors>-->
+<!--    </base-config>-->
+
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

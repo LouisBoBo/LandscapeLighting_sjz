@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    android:background="@drawable/scene_left_list_item_bg_shape"
+    android:gravity="center"
+    android:layout_margin="@dimen/dp_3"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_20"
+    android:paddingBottom="@dimen/dp_20">
+
+    <TextView
+        android:id="@+id/tv_build_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1号楼"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="全开"
+        android:textColor="@color/white"
+        android:textSize="23sp" />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/baseview"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_build_unselector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ExpandableListView
+        android:id="@+id/expandable_list"
+        android:layout_width="0dp"
+        android:background="@color/white"
+        android:layout_height="0dp"
+        android:childDivider="@color/alph"
+        android:divider="@null"
+        android:layout_margin="1dp"
+        app:layout_constraintStart_toStartOf="@id/baseview"
+        app:layout_constraintEnd_toEndOf="@id/baseview"
+        app:layout_constraintTop_toTopOf="@id/baseview"
+        app:layout_constraintBottom_toBottomOf="@id/baseview"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
